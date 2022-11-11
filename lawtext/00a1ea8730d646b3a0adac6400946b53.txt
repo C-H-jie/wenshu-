@@ -1,0 +1,63 @@
+{
+    "s1": "郭某某与任某某、高某某民间借贷纠纷一案执行裁定书",
+    "s2": "陕西省子洲县人民法院",
+    "s3": "RAC",
+    "s5": "00a1ea8730d646b3a0adac6400946b53",
+    "s6": "02",
+    "s7": "（2020）陕0831执617号",
+    "s8": "执行案件",
+    "s9": "执行实施",
+    "s31": "2020-10-28",
+    "s41": "2020-10-30",
+    "s22": "陕西省子洲县人民法院\n执行裁定书\n（2020）陕0831执617号",
+    "s23": "本院在执行郭某某与任某某、高某某民间借贷纠纷一案中，责令二被执行人向申请执行人郭某某支付借款本金7万元及利息，月利率为12‰，利息从2017年8月26日起计算至履行完毕之日止（扣除已付利息2000元）。向申请执行人郭某某加倍支付迟延履行期间的债务利息。负担案件受理费2220元，申请执行费2450元。保全费1020元，由高某某负担。但二被执行人未能主动履行生效法律文书确定义务。\n在执行过程中，1、本院依法向被执行人任某某、高某某发出执行通知书等执行文书",
+    "s25": "2、本院于2020年10月13日通过全国网络查控系统查询了被执行人任某某、高某某名下的相关财产信息，未发现二被执行人有银行存款，无车辆登记信息，无对外投资登记信息，也未能查到其他可供执行的财产。\n3、本院于2020年10月16日到子洲县不动产登记服务中心调查，未发现有房产登记信息。\n4、本院于2020年10月26日到二被执行人户籍住所地调查，未发现可供执行的财产线索。\n5、本院于2020年10月28日将被执行人任某某、高某某纳入全国法院失信被执行人名单和限制消费令，并在中国执行信息公开网上公布。\n6、在执行过程中，申请执行人郭某某未能向本院提供被执行人的可供执行财产。\n7、上述执行情况及信息，本院通过谈话方式告知申请执行人郭某某，并要求提供财产线索，申请执行人认可本院的调查结果，并表示不能提供财产线索，同意终结本次执行程序。\n综上所述，因本案被执行人任某某、高某某名下暂无财产可供执行，经本院向申请执行人郭某某释明二被执行人的财产情况，申请执行人明确表示提供不出二被执行人的财产和财产线索，并在本院穷尽财产调查措施之后对本院认定二被执行人在无财产可供执行表示认可，并同意终结本次执行程序",
+    "s26": "依照《最高人民法院关于适用＜中华人民共和国民事诉讼法＞的解释》第五百一十九条的规定，裁定如下",
+    "s27": "终结本次执行程序。\n终结本次执行程序后，申请执行人发现被执行人具备履行能力时，可以再次申请执行，不受申请执行期限的限制。\n本裁定书送达后立即生效",
+    "s28": "审判长高胜云\n审判员段波\n审判员刘玉芝\n二〇二〇年十月二十八日\n书记员张宝宁",
+    "s17": [
+        "郭某某",
+        "任某某",
+        "高某某"
+    ],
+    "s45": [],
+    "s11": [
+        "民间借贷纠纷"
+    ],
+    "wenshuAy": [
+        {
+            "key": "s14",
+            "value": "9177",
+            "text": "民间借贷纠纷"
+        }
+    ],
+    "s47": [
+        {
+            "tkx": "第五百一十九条第一款",
+            "fgmc": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+            "fgid": "2213409"
+        },
+        {
+            "tkx": "第五百一十九条第二款",
+            "fgmc": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+            "fgid": "2213409"
+        }
+    ],
+    "relWenshu": [],
+    "qwContent": "<div style=\"text-align: center; line-height: 25pt; margin: 0.5pt 0cm; font-family: 黑体; font-size: 18pt\">\n 陕西省子洲县人民法院</div>\n<div style=\"text-align: center; line-height: 25pt; margin: 0.5pt 0cm; font-family: 黑体; font-size: 18pt\">\n 执 行 裁 定 书</div>\n<div id='1'  style=\"text-align: right; line-height: 25pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n （2020）陕0831执617号</div>\n<div id='2'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 申请执行人：郭某某，男，1981年7月22日生，汉族，居民，住陕西省子洲县双湖峪镇宋家沟村。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 被执行人：任某某,男，1987年11月7日生,汉族，农民，住陕西省子洲县双湖峪镇宋家沟村。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 被执行人：高某某，女，1989年10月18日生，汉族，居民，住陕西省子洲县双湖峪镇宋家沟村。</div>\n<div id='2'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 本院在执行郭某某与任某某、高某某民间借贷纠纷一案中，责令二被执行人向申请执行人郭某某支付借款本金7万元及利息，月利率为12&permil;，利息从2017年8月26日起计算至履行完毕之日止（扣除已付利息2000元）。向申请执行人郭某某加倍支付迟延履行期间的债务利息。负担案件受理费2220元，申请执行费2450元。保全费1020元，由高某某负担。但二被执行人未能主动履行生效法律文书确定义务。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 在执行过程中，1、本院依法向被执行人任某某、高某某发出执行通知书等执行文书。</div>\n<div id='4'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 2、本院于2020年10月13日通过全国网络查控系统查询了被执行人任某某、高某某名下的相关财产信息，未发现二被执行人有银行存款，无车辆登记信息，无对外投资登记信息，也未能查到其他可供执行的财产。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 3、本院于2020年10月16日到子洲县不动产登记服务中心调查，未发现有房产登记信息。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 4、本院于2020年10月26日到二被执行人户籍住所地调查，未发现可供执行的财产线索。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 5、本院于2020年10月28日将被执行人任某某、高某某纳入全国法院失信被执行人名单和限制消费令，并在中国执行信息公开网上公布。</div>\n<div id='2'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 6、在执行过程中，申请执行人郭某某未能向本院提供被执行人的可供执行财产。</div>\n<div id='2'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 7、上述执行情况及信息，本院通过谈话方式告知申请执行人郭某某，并要求提供财产线索，申请执行人认可本院的调查结果，并表示不能提供财产线索，同意终结本次执行程序。</div>\n<div id='2'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 综上所述，因本案被执行人任某某、高某某名下暂无财产可供执行，经本院向申请执行人郭某某释明二被执行人的财产情况，申请执行人明确表示提供不出二被执行人的财产和财产线索，并在本院穷尽财产调查措施之后对本院认定二被执行人在无财产可供执行表示认可，并同意终结本次执行程序。</div>\n<div id='5'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 依照《最高人民法院关于适用＜中华人民共和国民事诉讼法＞的解释》第五百一十九条的规定，裁定如下：</div>\n<div id='6'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 终结本次执行程序。</div>\n<div id='6'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 终结本次执行程序后，申请执行人发现被执行人具备履行能力时，可以再次申请执行，不受申请执行期限的限制。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 本裁定书送达后立即生效。</div>\n<div style=\"text-align: right; line-height: 25pt; margin: 0.5pt 36pt 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 审判长　　高胜云</div>\n<div style=\"text-align: right; line-height: 25pt; margin: 0.5pt 36pt 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 审判员　　段　波</div>\n<div style=\"text-align: right; line-height: 25pt; margin: 0.5pt 36pt 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 审判员　　刘玉芝</div>\n<div style=\"text-align: right; line-height: 25pt; margin: 0.5pt 36pt 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 二〇二〇年十月二十八日</div>\n<div id='7'  style=\"text-align: right; line-height: 25pt; margin: 0.5pt 36pt 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 书记员　　张宝宁</div>\n",
+    "directory": [
+        "1",
+        "2",
+        "2",
+        "4",
+        "2",
+        "2",
+        "2",
+        "5",
+        "6",
+        "6",
+        "7"
+    ],
+    "globalNet": "outer",
+    "viewCount": "169"
+}

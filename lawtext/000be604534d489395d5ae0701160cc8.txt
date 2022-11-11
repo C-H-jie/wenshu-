@@ -1,0 +1,59 @@
+{
+    "s1": "王娜、张东红租赁合同纠纷首次执行裁定书",
+    "s2": "旬邑县人民法院",
+    "s3": "R4C",
+    "s5": "000be604534d489395d5ae0701160cc8",
+    "s6": "02",
+    "s7": "（2021）陕0429执831号",
+    "s8": "执行案件",
+    "s9": "执行实施",
+    "s10": "首次执行",
+    "s31": "2021-12-23",
+    "s41": "2021-12-23",
+    "s22": "陕西省旬邑县人民法院\n执行裁定书\n（2021）陕0429执831号",
+    "s23": "本院在受理执行申请执行人张某申请执行被执行人王某租赁合同纠纷一案中，旬邑县人民法院作出的（2021）陕0429民初475号民事判决书已发生法律效力。被执行人王某逾期未履行该法律文书确定的义务，申请执行人张某于2021年10月18日向本院申请执行",
+    "s25": "在执行过程中，被执行人王某已返还租赁的申请执行人张某位于旬邑县ＸＸ中心ＸＸ层ＸＸ区ＸＸ号商铺，申请执行人已验收接管。后本院穷尽执行措施查明：1、被执行人银行账户无存款；2、被执行人名下无工商登记信息；3、被执行人名下无车辆登记信息；4、被执行人名下无房产登记信息；5、未发现被执行人名下有其他可供执行的财产及财产线索；本院依法采取的措施：1、冻结被执行人银行账户；2、将被执行人纳入失信人员名单；3、限制被执行人进行消费",
+    "s26": "本院认为，本院穷尽执行措施未查到被执行人有可供执行财产及财产线索，本院已冻结被执行人银行账户、限制被执行人消费、将被执行人纳入失信人员名单。申请执行人提供不出被执行人名下有可供执行的财产及财产线索，本案经合议庭评议，该案符合终结本次执行程序的规定，已向申请执行人告知了本案终结本次执行程序。依照《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第五百一十九条的规定，裁定如下",
+    "s27": "本案终结本次执行程序。\n申请执行人发现被执行人有可供执行的财产时，可持本裁定书随时向本院申请恢复执行",
+    "s28": "审判长赵剑\n审判员马军\n审判员田飞\n二〇二一年十二月二十日\n书记员郭建军",
+    "s17": [
+        "王娜",
+        "张东红"
+    ],
+    "s45": [
+        "冻结"
+    ],
+    "s11": [
+        "租赁合同纠纷"
+    ],
+    "wenshuAy": [
+        {
+            "key": "s14",
+            "value": "3245",
+            "text": "租赁合同纠纷"
+        }
+    ],
+    "s47": [
+        {
+            "tkx": "第五百一十九条第一款",
+            "fgmc": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+            "fgid": "2213409"
+        },
+        {
+            "tkx": "第五百一十九条第二款",
+            "fgmc": "最高人民法院关于适用《中华人民共和国民事诉讼法》的解释",
+            "fgid": "2213409"
+        }
+    ],
+    "relWenshu": [],
+    "qwContent": "<!DOCTYPE HTML PUBLIC -//W3C//DTD HTML 4.0 Transitional//EN'><HTML><HEAD><TITLE></TITLE></HEAD><BODY><div style='TEXT-ALIGN: center; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 0cm; FONT-FAMILY: 黑体; FONT-SIZE: 18pt;'>陕西省旬邑县人民法院</div><div style='TEXT-ALIGN: center; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 0cm; FONT-FAMILY: 黑体; FONT-SIZE: 18pt;'>执 行 裁 定 书</div><div id='1'  style='TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 0cm;  FONT-FAMILY: 宋体;FONT-SIZE: 15pt; '>（2021）陕0429执831号</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>申请执行人：张某。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>被执行人：王某。</div><div id='3'  style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>本院在受理执行申请执行人张某申请执行被执行人王某租赁合同纠纷一案中，旬邑县人民法院作出的（2021）陕0429民初475号民事判决书已发生法律效力。被执行人王某逾期未履行该法律文书确定的义务，申请执行人张某于2021年10月18日向本院申请执行。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>在执行过程中，被执行人王某已返还租赁的申请执行人张某位于旬邑县XX中心XX层XX区XX号商铺，申请执行人已验收接管。后本院穷尽执行措施查明：1、被执行人银行账户无存款；2、被执行人名下无工商登记信息；3、被执行人名下无车辆登记信息；4、被执行人名下无房产登记信息；5、未发现被执行人名下有其他可供执行的财产及财产线索；本院依法采取的措施：1、冻结被执行人银行账户；2、将被执行人纳入失信人员名单；3、限制被执行人进行消费。</div><div id='5'  style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>本院认为，本院穷尽执行措施未查到被执行人有可供执行财产及财产线索，本院已冻结被执行人银行账户、限制被执行人消费、将被执行人纳入失信人员名单。申请执行人提供不出被执行人名下有可供执行的财产及财产线索，本案经合议庭评议，该案符合终结本次执行程序的规定，已向申请执行人告知了本案终结本次执行程序。依照《最高人民法院关于适用〈中华人民共和国民事诉讼法〉的解释》第五百一十九条的规定，裁定如下：</div><div id='6'  style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>本案终结本次执行程序。</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>申请执行人发现被执行人有可供执行的财产时，可持本裁定书随时向本院申请恢复执行。</div><div style='TEXT-ALIGN: right; LINE-HEIGHT: 25pt; MARGIN: 0.5pt 36pt 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>审判长　　赵剑</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>审判员马军</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>审判员田飞</div><div style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>二〇二一年十二月二十日</div><div id='7'  style='LINE-HEIGHT: 25pt; TEXT-INDENT: 30pt; MARGIN: 0.5pt 0cm;FONT-FAMILY: 宋体; FONT-SIZE: 15pt;'>书记员郭建军</div></BODY></HTML>",
+    "directory": [
+        "1",
+        "3",
+        "5",
+        "6",
+        "7"
+    ],
+    "globalNet": "outer",
+    "viewCount": "112"
+}

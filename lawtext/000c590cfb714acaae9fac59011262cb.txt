@@ -1,0 +1,51 @@
+{
+    "s1": "杨永杰与孙铁良、雷彦勤借款合同纠纷执行裁定书",
+    "s2": "陕西省合阳县人民法院",
+    "s3": "R5A",
+    "s5": "000c590cfb714acaae9fac59011262cb",
+    "s6": "02",
+    "s7": "（2020）陕0524执恢59号",
+    "s8": "执行案件",
+    "s9": "执行实施",
+    "s31": "2020-08-13",
+    "s41": "2020-10-21",
+    "s22": "陕西省合阳县人民法院\n执行裁定书\n（2020）陕0524执恢59号",
+    "s23": "执行申请执行人杨永杰与被执行人孙铁良、雷彦勤民间借贷纠纷一案的陕西省合阳县人民法院（2019）陕0524民初805号民事判决书和（2019）陕0524执300号执行裁定书已发生法律效力。申请执行人杨永杰于2019年5月13日向本院申请强制执行要求被执行人孙铁良、雷彦勤偿还借款95000元及迟延履行金、给付案件受理费1150元并承担本案执行费1417元，本院已依法受理",
+    "s25": "在执行过程中，查明：二被执行人有存款账号，本院予以冻结；2020年6月22日在本院的主持下双方当事人达成：1、当庭了给付申请执行人20000元（已给付），给付后解冻账户；2、剩余本金75000元、案件受理费1150元，合计76150元，农历12月20日前（农历6月底、8月底、10月底、12月20日结清），每次偿还19038元，若能借到款提前偿还；3、农历12月最后一次还款时计算核实后给付迟延履行金；4、若被执行人未按上述协议自觉履行，本院将强制执行的执行和解协议，经审查符合法律规定",
+    "s26": "依照《中华人民共和国民事诉讼法》第二百五十七条一款第（六）项的规定，裁定如下",
+    "s27": "终结陕西省合阳县人民法院（2020）陕0524执恢59号执行案件的执行。\n本裁定送达后即发生法律效力",
+    "s28": "审判员雷宏\n二〇二〇年八月十三日\n书记员康凯",
+    "s17": [
+        "杨永杰",
+        "孙铁良",
+        "雷彦勤"
+    ],
+    "s45": [],
+    "s11": [
+        "民间借贷纠纷"
+    ],
+    "wenshuAy": [
+        {
+            "key": "s14",
+            "value": "9177",
+            "text": "民间借贷纠纷"
+        }
+    ],
+    "s47": [
+        {
+            "tkx": "第二百五十七条第六项",
+            "fgmc": "《中华人民共和国民事诉讼法》",
+            "fgid": "3779249"
+        }
+    ],
+    "relWenshu": [],
+    "qwContent": "<div style=\"text-align: center; line-height: 25pt; margin: 0.5pt 0cm; font-family: 黑体; font-size: 18pt\">\n 陕西省合阳县人民法院</div>\n<div style=\"text-align: center; line-height: 25pt; margin: 0.5pt 0cm; font-family: 黑体; font-size: 18pt\">\n 执 行 裁 定 书</div>\n<div style=\"text-align: right; line-height: 25pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n (2020)陕0524执恢59号</div>\n<div id='2'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 申请执行人：杨永杰，男，汉族，初中文化，住合阳县新池镇宋家庄村新巷，农民。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 被执行人：孙铁良，男，汉族，初中文化，住合阳县黑池镇申庄村，农民。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 被告：雷彦勤，女，汉族，初中文化，住合阳县黑池镇申庄村，农民。</div>\n<div id='2'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 执行申请执行人杨永杰与被执行人孙铁良、雷彦勤民间借贷纠纷一案的陕西省合阳县人民法院(2019)陕0524民初805号民事判决书和（2019）陕0524执300号执行裁定书已发生法律效力。申请执行人杨永杰于2019年5月13日向本院申请强制执行要求被执行人孙铁良、雷彦勤偿还借款95000元及迟延履行金、给付案件受理费1150元并承担本案执行费1417元，本院已依法受理。</div>\n<div id='4'  style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 在执行过程中，查明：二被执行人有存款账号，本院予以冻结；2020年6月22日在本院的主持下双方当事人达成：1、当庭了给付申请执行人20000元（已给付），给付后解冻账户；2、剩余本金75000元、案件受理费1150元，合计76150元，农历12月20日前（农历6月底、8月底、10月底、12月20日结清），每次偿还19038元，若能借到款提前偿还；3、农历12月最后一次还款时计算核实后给付迟延履行金；4、若被执行人未按上述协议自觉履行，本院将强制执行的执行和解协议，经审查符合法律规定，依照《中华人民共和国民事诉讼法》第二百五十七条一款第（六）项的规定，裁定如下：</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 终结陕西省合阳县人民法院(2020)陕0524执恢59号执行案件的执行。</div>\n<div style=\"line-height: 25pt; text-indent: 30pt; margin: 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 本裁定送达后即发生法律效力。</div>\n<div style=\"text-align: right; line-height: 25pt; margin: 0.5pt 36pt 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 审判员　　雷宏</div>\n<div style=\"text-align: right; line-height: 25pt; margin: 0.5pt 36pt 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 二〇二〇年八月十三日</div>\n<div id='7'  style=\"text-align: right; line-height: 25pt; margin: 0.5pt 36pt 0.5pt 0cm; font-family: 宋体; font-size: 15pt\">\n 书记员　　康凯</div>\n",
+    "directory": [
+        "2",
+        "2",
+        "4",
+        "7"
+    ],
+    "globalNet": "outer",
+    "viewCount": "8"
+}
