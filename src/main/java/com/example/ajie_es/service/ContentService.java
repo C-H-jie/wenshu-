@@ -1,6 +1,7 @@
 package com.example.ajie_es.service;
 
 
+import com.alibaba.fastjson.JSONObject;
 import lombok.SneakyThrows;
 import org.apache.lucene.search.TotalHits;
 import org.elasticsearch.action.get.GetRequest;
@@ -225,6 +226,9 @@ public class ContentService {
         aggregationBuilder.size(30);
         sourceBuilder.aggregation(aggregationBuilder);
 
+//        解除搜索限制，允许返回真实hit
+        sourceBuilder.trackTotalHits(true);
+
         //用Request进行发送
         searchRequest.source(sourceBuilder);
         SearchResponse response = restHighLevelClient.search(searchRequest,RequestOptions.DEFAULT);
@@ -295,16 +299,15 @@ public class ContentService {
         Aggregations aggregations = response.getAggregations();
         ParsedStringTerms parsedStringTerms = aggregations.get("aboutWord");
         List<? extends Terms.Bucket> buckets = parsedStringTerms.getBuckets();
+        Map abuoutWords = new HashMap();
         for (Terms.Bucket bucket : buckets) {
             //key的数据
             String key = bucket.getKey().toString();
             long docCount = bucket.getDocCount();
-            //获取数据
-//            Aggregations bucketAggregations = bucket.getAggregations();
-//            ParsedSum sumId = bucketAggregations.get("sum_id");
-//            ParsedAvg avgId = bucketAggregations.get("avg_id");
-            System.out.println(key + ":" + docCount );
+//            System.out.println(key + ":" + docCount );
+            abuoutWords.put(key,docCount);
         }
+        dict.put("abuotwords",abuoutWords);
 
         return dict;
     }
