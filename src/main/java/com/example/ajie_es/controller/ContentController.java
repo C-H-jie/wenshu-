@@ -15,6 +15,7 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
+@CrossOrigin
 public class ContentController {
 
     @Autowired
@@ -86,6 +87,11 @@ public class ContentController {
         return contentService.HTML_searchByid(id);
     }
 
+    @PostMapping("/keyword")
+    public Map post_keyword_search (@RequestParam("keyword") String keyword) throws IOException {
+
+        return contentService.keywords_search(keyword);
+    }
 
 
 

@@ -221,10 +221,6 @@ public class ContentService {
         //同样加入sourceBuilder准备发送
         sourceBuilder.highlighter(highlightBuilder);
 
-//        聚合搜索，查询关键字数量
-        TermsAggregationBuilder aggregationBuilder = AggregationBuilders.terms("aboutWord").field("Keyword");
-        aggregationBuilder.size(30);
-        sourceBuilder.aggregation(aggregationBuilder);
 
 //        解除搜索限制，允许返回真实hit
         sourceBuilder.trackTotalHits(true);
@@ -295,9 +291,37 @@ public class ContentService {
         dict.put("number",totalHits.value);
         dict.put("mas",list);
 
-//        聚合搜索数据处理
+
+
+        return dict;
+    }
+
+    //    类型搜索---keyword
+
+    public Map  keywords_search(String keyword) throws IOException {
+
+        //建立request，并确定将request指向“lawmas”索引
+        SearchRequest searchRequest = new SearchRequest("law_txt");
+
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+
+        //        聚合搜索，查询关键字数量
+        TermsAggregationBuilder aggregationBuilder = AggregationBuilders.terms("Keyword").field("Keyword");
+        aggregationBuilder.size(30);
+        sourceBuilder.aggregation(aggregationBuilder);
+
+        //        解除搜索限制，允许返回真实hit
+        sourceBuilder.trackTotalHits(true);
+
+
+        //        发送请求
+        searchRequest.source(sourceBuilder);
+        SearchResponse response = restHighLevelClient.search(searchRequest,RequestOptions.DEFAULT);
+
+        //        聚合搜索数据处理
         Aggregations aggregations = response.getAggregations();
-        ParsedStringTerms parsedStringTerms = aggregations.get("aboutWord");
+        ParsedStringTerms parsedStringTerms = aggregations.get("Keyword");
         List<? extends Terms.Bucket> buckets = parsedStringTerms.getBuckets();
         Map abuoutWords = new HashMap();
         for (Terms.Bucket bucket : buckets) {
@@ -307,59 +331,9 @@ public class ContentService {
 //            System.out.println(key + ":" + docCount );
             abuoutWords.put(key,docCount);
         }
-        dict.put("abuotwords",abuoutWords);
 
-        return dict;
-    }
+        return abuoutWords;
 
-    //    类型搜索---添加日期排序--用于首页搭建
-    public List<Map<String,Object>> type_search_datesort(String keyword, int pageNo, int pageSize) throws IOException {
-        if (pageNo<=1){
-            pageNo = 1;
-        }
-
-        //条件搜索
-        BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
-        SearchRequest searchRequest = new SearchRequest("lawmas");
-        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
-
-        //分页
-        sourceBuilder.from(pageNo-1);
-        sourceBuilder.size(pageSize);
-
-        //match查询
-//        MatchQueryBuilder describe = QueryBuilders.matchQuery("type_",keyword);
-        TermQueryBuilder describe = QueryBuilders.termQuery("type_",keyword);
-        boolBuilder.must(describe);
-        sourceBuilder.query(boolBuilder)
-                .sort("expiry",SortOrder.DESC);
-        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
-//        sourceBuilder.sort("title", SortOrder.DESC);
-//        SortBuilder sortBuilder = SortBuilders.fieldSort("expiry").order(SortOrder.DESC);
-        searchRequest.source(sourceBuilder);
-
-//        SearchResponse searchResponse = restHighLevelClient.rankEval();
-        SearchResponse searchResponse = restHighLevelClient.search(searchRequest, RequestOptions.DEFAULT);
-
-//        System.out.println("searchResponse = " + searchResponse);
-
-        ArrayList<Map<String,Object>> list = new ArrayList<>();
-
-//        Date date = new Date();
-        for (SearchHit documentFields : searchResponse.getHits().getHits()) {
-//            System.out.println("documentFields = " + documentFields);
-//            换算时间
-            String dt = sdf.format(documentFields.getSourceAsMap().get("expiry"));
-            String pubt = sdf.format(documentFields.getSourceAsMap().get("publish_time"));
-            documentFields.getSourceAsMap().put("publish_time",pubt);
-//            System.out.println(dt);
-            documentFields.getSourceAsMap().put("expiry",dt);
-
-            list.add(documentFields.getSourceAsMap());
-        }
-
-
-        return list;
     }
 
 
