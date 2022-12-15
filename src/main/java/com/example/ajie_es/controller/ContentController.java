@@ -2,6 +2,7 @@ package com.example.ajie_es.controller;
 
 
 import com.example.ajie_es.pojo.Sentence;
+import com.example.ajie_es.pojo.SuperSearch;
 import com.example.ajie_es.service.ContentService;
 import org.elasticsearch.action.search.SearchResponse;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -42,24 +43,24 @@ public class ContentController {
 //
 
     //  关键字搜索，只搜索标题，不具有高亮功能，已经基本废弃
-    @CrossOrigin
-    @GetMapping("/search={keyword}&No={No}&pageSize={pageSize}")
-    public List<Map<String,Object>> search2 (@PathVariable("keyword") String keyword,
-                                             @PathVariable("No") int No,
-                                             @PathVariable("pageSize") int pageSize) throws IOException {
-
-        return contentService.searchPage2(keyword,No,pageSize);
-    }
+//    @CrossOrigin
+//    @GetMapping("/search={keyword}&No={No}&pageSize={pageSize}")
+//    public List<Map<String,Object>> search2 (@PathVariable("keyword") String keyword,
+//                                             @PathVariable("No") int No,
+//                                             @PathVariable("pageSize") int pageSize) throws IOException {
+//
+//        return contentService.searchPage2(keyword,No,pageSize);
+//    }
 
 
     // 文本搜索，不具有高亮功能
-    @GetMapping("/txtsearch={keyword}&No={No}&pageSize={pageSize}")
-    public List<Map<String,Object>> search3 (@PathVariable("keyword") String keyword,
-                                             @PathVariable("No") int No,
-                                             @PathVariable("pageSize") int pageSize) throws IOException {
-
-        return contentService.lawtxt_search(keyword,No,pageSize);
-    }
+//    @GetMapping("/txtsearch={keyword}&No={No}&pageSize={pageSize}")
+//    public List<Map<String,Object>> search3 (@PathVariable("keyword") String keyword,
+//                                             @PathVariable("No") int No,
+//                                             @PathVariable("pageSize") int pageSize) throws IOException {
+//
+//        return contentService.lawtxt_search(keyword,No,pageSize);
+//    }
 
 
     //  高亮文本搜索，目前的主要接口之一
@@ -80,19 +81,34 @@ public class ContentController {
         return contentService.lawtxt_search_HLight(keyword,No,pageSize);
     }
 
-
+//    正文获取
     @PostMapping("/html_txt")
     public Map post_Html_txt(@RequestParam("id") String id)
     {
         return contentService.HTML_searchByid(id);
     }
 
+//    关键词数量获取
     @PostMapping("/keyword")
     public Map post_keyword_search (@RequestParam("keyword") String keyword) throws IOException {
 
         return contentService.keywords_search(keyword);
     }
 
+//    类别搜索
+    @PostMapping("/type")
+    public Map post_type_search (@RequestParam("type") String typeword,
+                                 @RequestParam("No") int No,
+                                 @RequestParam("pageSize") int pageSize) throws IOException {
+
+        return contentService.type_search(typeword,No,pageSize);
+    }
+
+    @PostMapping("/search")
+    public Map post_type_search (@RequestBody SuperSearch superSearch) throws IOException {
+
+        return contentService.showSearch(superSearch);
+    }
 
 
 }

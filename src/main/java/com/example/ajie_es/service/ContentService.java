@@ -1,13 +1,12 @@
 package com.example.ajie_es.service;
 
 
-import com.alibaba.fastjson.JSONObject;
+import com.example.ajie_es.pojo.SuperSearch;
 import lombok.SneakyThrows;
 import org.apache.lucene.search.TotalHits;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.search.SearchRequest;
-import org.elasticsearch.action.search.SearchRequestBuilder;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -15,25 +14,15 @@ import org.elasticsearch.common.text.Text;
 import org.elasticsearch.common.unit.TimeValue;
 import org.elasticsearch.index.query.*;
 import org.elasticsearch.search.SearchHit;
-import org.elasticsearch.search.SearchHits;
-import org.elasticsearch.search.aggregations.Aggregation;
-import org.elasticsearch.search.aggregations.AggregationBuilder;
 import org.elasticsearch.search.aggregations.AggregationBuilders;
 import org.elasticsearch.search.aggregations.Aggregations;
 import org.elasticsearch.search.aggregations.bucket.terms.ParsedStringTerms;
 import org.elasticsearch.search.aggregations.bucket.terms.Terms;
 import org.elasticsearch.search.aggregations.bucket.terms.TermsAggregationBuilder;
-import org.elasticsearch.search.aggregations.metrics.ParsedAvg;
-import org.elasticsearch.search.aggregations.metrics.ParsedSum;
 import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightBuilder;
 import org.elasticsearch.search.fetch.subphase.highlight.HighlightField;
-import org.elasticsearch.search.sort.SortBuilder;
-import org.elasticsearch.search.sort.SortBuilders;
-import org.elasticsearch.search.sort.SortOrder;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.mapping.AccessOptions;
-import org.springframework.expression.spel.ast.OperatorMatches;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
@@ -245,14 +234,6 @@ public class ContentService {
         {
             Map<String, Object> sourceAsMap = hit.getSourceAsMap();
 
-//            String ext = sdf.format(hit.getSourceAsMap().get("expiry"));
-//            hit.getSourceAsMap().put("expiry",ext);
-//
-//            String pubt = sdf.format(hit.getSourceAsMap().get("publish_time"));
-//            hit.getSourceAsMap().put("publish_time",pubt);
-//            list.add(hit.getSourceAsMap());
-
-
             //将高亮字段打入检索结果中
             Map<String, HighlightField> highlightFields = hit.getHighlightFields();
             HighlightField field= highlightFields.get("part");
@@ -349,6 +330,201 @@ public class ContentService {
         return documentFields.getSource();
     }
 
+
+    public Map type_search(String keyword, int pageNo, int pageSize) throws IOException {
+
+        SearchRequest searchRequest = new SearchRequest("law_txt");
+        //建立sourcebuilder 用来储存页码参数
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.from(pageNo-1);
+        sourceBuilder.size(pageSize);
+
+        BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
+
+        TermQueryBuilder termQueryBuilder = QueryBuilders.termQuery("txt_type", keyword);
+
+        boolBuilder.must(termQueryBuilder);
+
+
+        sourceBuilder.query(boolBuilder);
+        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+
+
+        sourceBuilder.trackTotalHits(true);
+
+        searchRequest.source(sourceBuilder);
+        SearchResponse response = restHighLevelClient.search(searchRequest,RequestOptions.DEFAULT);
+
+        TotalHits totalHits = response.getHits().getTotalHits();
+
+        ArrayList<Map<String,Object>> list = new ArrayList<>();
+        for (SearchHit documentFields : response.getHits().getHits()) {
+//            System.out.println("documentFields = " + documentFields);
+            list.add(documentFields.getSourceAsMap());
+        }
+
+        Map dict = new HashMap();
+        dict.put("number",totalHits.value);
+        dict.put("mas",list);
+
+        return dict;
+    }
+
+    public  Map showSearch(SuperSearch superSearch) throws IOException {
+
+
+        if (superSearch.getSearchPage()<=1){
+            superSearch.setSearchPage(1);
+        }
+
+        if (superSearch.getSearchSize()<=1){
+            superSearch.setSearchSize(1);
+        }
+
+
+        //建立boolbuilder
+        BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
+
+        //建立request，并确定将request指向“lawmas”索引
+        SearchRequest searchRequest = new SearchRequest("law_txt");
+
+        //建立sourcebuilder 用来储存页码参数
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.from(superSearch.getSearchPage()-1);
+        sourceBuilder.size(superSearch.getSearchSize());
+
+        // MatchQueryBuilder 进行关键字搜索。
+        if (superSearch.getPart()!=null){
+            MatchQueryBuilder describe1 = QueryBuilders.matchQuery("part",superSearch.getPart());
+            boolBuilder.must(describe1);
+        }
+        if (superSearch.getTitle()!=null){
+            MatchQueryBuilder describe2 = QueryBuilders.matchQuery("title",superSearch.getTitle());
+            boolBuilder.must(describe2);
+        }
+
+        if (superSearch.getTxt_number()!=null){
+            TermQueryBuilder describe3 = QueryBuilders.termQuery("txt_number",superSearch.getTxt_number());
+            boolBuilder.must(describe3);
+        }
+
+        if (superSearch.getStartTime()!=null && superSearch.getEndTime()!=null){
+            RangeQueryBuilder rangequerybuilder = QueryBuilders
+                    .rangeQuery("pushTime")
+                    .from(superSearch.getStartTime()).to(superSearch.getEndTime());
+            boolBuilder.must(rangequerybuilder);
+        }
+
+        if (superSearch.getTxt_place()!=null){
+            MatchQueryBuilder describe4 = QueryBuilders.matchQuery("txt_place",superSearch.getTxt_place());
+            boolBuilder.must(describe4);
+        }
+
+        if (superSearch.getPeople()!=null){
+            MatchQueryBuilder describe5 = QueryBuilders.matchQuery("people",superSearch.getPeople());
+            boolBuilder.must(describe5);
+        }
+
+        if (superSearch.getWenshuAu()!=null){
+            TermQueryBuilder describe6 = QueryBuilders.termQuery("wenshuAu",superSearch.getWenshuAu());
+            boolBuilder.must(describe6);
+        }
+
+
+
+        //boolBuilder进行判断，此处设置为 txt文本必须包含keyword,title可以不包含keyword
+
+
+        //加入sourceBuilder准备
+        sourceBuilder.query(boolBuilder);
+        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+
+        //高亮设置
+        HighlightBuilder highlightBuilder = new HighlightBuilder();
+        //设置txt和title高亮
+        highlightBuilder.field("part");
+        highlightBuilder.field("title");
+
+//        System.out.println("highlightBuilder = " + highlightBuilder);
+
+        //        highlightBuilder.field("title");
+//        highlightBuilder.requireFieldMatch(false);
+        //高亮的HTML标签
+        highlightBuilder.preTags("<span style='color:red'>");
+        highlightBuilder.postTags("</span>");
+//        highlightBuilder.fragmentSize(1); //最大高亮分片数
+//        highlightBuilder.numOfFragments(0); //从第一个分片获取高亮片段
+
+        //同样加入sourceBuilder准备发送
+        sourceBuilder.highlighter(highlightBuilder);
+
+
+//        解除搜索限制，允许返回真实hit
+        sourceBuilder.trackTotalHits(true);
+
+        //用Request进行发送
+        searchRequest.source(sourceBuilder);
+        SearchResponse response = restHighLevelClient.search(searchRequest,RequestOptions.DEFAULT);
+
+//        System.out.println("response = " + response);
+//        System.out.println("response = " + response);
+//        System.out.println("response.getHits().getHits() = " + response.getHits().getHits());
+
+
+
+        //获取response中的数据
+        TotalHits totalHits = response.getHits().getTotalHits();
+////        System.out.println("totalHits = " + totalHits);
+//
+        List<Map<String, Object>> list = new ArrayList<>();
+//      //遍历response中的数据
+        for (SearchHit hit : response.getHits().getHits())
+        {
+            Map<String, Object> sourceAsMap = hit.getSourceAsMap();
+
+            //将高亮字段打入检索结果中
+            Map<String, HighlightField> highlightFields = hit.getHighlightFields();
+            HighlightField field= highlightFields.get("part");
+            if(field!= null){
+                Text[] fragments = field.fragments();
+                String n_field = "";
+                for (Text fragment : fragments) {
+                    n_field += fragment;
+                }
+                //高亮标题覆盖原标题
+//                n_field = n_field.substring(0,50);
+//                System.out.println(n_field);
+                sourceAsMap.put("part",n_field);
+            }
+//
+            HighlightField htitle = highlightFields.get("title");
+            if(htitle!= null)
+            {
+                Text[] fragments = htitle.fragments();
+                String htt = "";
+                for (Text fragment : fragments)
+                {
+                    htt += fragment;
+
+                }
+                //高亮标题覆盖原标题
+//                n_field = n_field.substring(0,50);
+//                System.out.println(htt);
+                sourceAsMap.put("title",htt);
+            }
+//
+            list.add(hit.getSourceAsMap());
+        }
+//      将数据整合为一个list写入map中
+        Map dict = new HashMap();
+        dict.put("number",totalHits.value);
+        dict.put("mas",list);
+
+
+
+        return dict;
+
+    }
 
 }
 
