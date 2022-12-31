@@ -4,9 +4,9 @@ import java.util.Date;
 
 public class SuperSearch {
 
-    private int SearchSize;
+    private int searchSize;
 
-    private int SearchPage;
+    private int searchPage;
 
     //    s1 标题
     private String title;
@@ -52,7 +52,7 @@ public class SuperSearch {
     private String people;
 
     //    s45 关键字 一个数组
-    private JSONArray Keyword;
+    private JSONArray keyword;
 
     //    s11 案由 一个数组
     private String wenshuAu;
@@ -61,8 +61,8 @@ public class SuperSearch {
     }
 
     public SuperSearch(int searchSize, int searchPage, String title, String id, String part, JSONArray lawabout, Date startTime, Date endTime, String txt_number, String txt_type, String txt_place, String people, JSONArray keyword, String wenshuAu) {
-        this.SearchSize = searchSize;
-        this.SearchPage = searchPage;
+        this.searchSize = searchSize;
+        this.searchPage = searchPage;
         this.title = title;
         this.id = id;
         this.part = part;
@@ -73,24 +73,24 @@ public class SuperSearch {
         this.txt_type = txt_type;
         this.txt_place = txt_place;
         this.people = people;
-        this.Keyword = keyword;
+        this.keyword = keyword;
         this.wenshuAu = wenshuAu;
     }
 
     public int getSearchSize() {
-        return SearchSize;
+        return searchSize;
     }
 
     public void setSearchSize(int searchSize) {
-        SearchSize = searchSize;
+        this.searchSize = searchSize;
     }
 
     public int getSearchPage() {
-        return SearchPage;
+        return searchPage;
     }
 
     public void setSearchPage(int searchPage) {
-        SearchPage = searchPage;
+        this.searchPage = searchPage;
     }
 
     public String getTitle() {
@@ -174,11 +174,11 @@ public class SuperSearch {
     }
 
     public JSONArray getKeyword() {
-        return Keyword;
+        return keyword;
     }
 
     public void setKeyword(JSONArray keyword) {
-        Keyword = keyword;
+        this.keyword = keyword;
     }
 
     public String getWenshuAu() {

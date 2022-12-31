@@ -110,5 +110,12 @@ public class ContentController {
         return contentService.showSearch(superSearch);
     }
 
+    @PostMapping("/total")
+    public Map post_type_search (@RequestParam("keyword") String keyword) throws IOException {
+
+        return contentService.type_total(keyword);
+
+    }
+
 
 }

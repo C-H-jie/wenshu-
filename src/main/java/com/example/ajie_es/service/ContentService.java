@@ -168,16 +168,21 @@ public class ContentService {
         if (pageNo<=1){
             pageNo = 1;
         }
-        //建立boolbuilder
-        BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
+
 
         //建立request，并确定将request指向“lawmas”索引
         SearchRequest searchRequest = new SearchRequest("law_txt");
+
+
 
         //建立sourcebuilder 用来储存页码参数
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
         sourceBuilder.from(pageNo-1);
         sourceBuilder.size(pageSize);
+
+
+        //建立boolbuilder
+        BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
 
         // MatchQueryBuilder 进行关键字搜索，分别对txt和tittle进行匹配搜索
         MatchQueryBuilder describe2 = QueryBuilders.matchQuery("part",keyword);
@@ -278,7 +283,6 @@ public class ContentService {
     }
 
     //    类型搜索---keyword
-
     public Map  keywords_search(String keyword) throws IOException {
 
         //建立request，并确定将request指向“lawmas”索引
@@ -286,6 +290,37 @@ public class ContentService {
 
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
         sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+
+
+        if (keyword.length() == 0){
+            System.out.println("Ture");
+            MatchAllQueryBuilder matchAllQueryBuilder = QueryBuilders.matchAllQuery();
+            sourceBuilder.query(matchAllQueryBuilder);
+            sourceBuilder.size(0);
+
+        }
+
+        else {
+            System.out.println("Flase");
+
+            //建立boolbuilder
+            BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
+
+            // MatchQueryBuilder 进行关键字搜索，分别对txt和tittle进行匹配搜索
+            MatchQueryBuilder describe2 = QueryBuilders.matchQuery("part",keyword);
+            MatchQueryBuilder describe = QueryBuilders.matchQuery("title",keyword);
+
+            //boolBuilder进行判断，此处设置为 txt文本必须包含keyword,title可以不包含keyword
+            boolBuilder.must(describe2)
+                    .should(describe);
+
+            //加入sourceBuilder准备
+            sourceBuilder.query(boolBuilder);
+            sourceBuilder.size(0);
+
+        }
+
+
 
         //        聚合搜索，查询关键字数量
         TermsAggregationBuilder aggregationBuilder = AggregationBuilders.terms("Keyword").field("Keyword");
@@ -372,6 +407,8 @@ public class ContentService {
 
     public  Map showSearch(SuperSearch superSearch) throws IOException {
 
+        System.out.println(superSearch.getSearchSize());
+
 
         if (superSearch.getSearchPage()<=1){
             superSearch.setSearchPage(1);
@@ -393,6 +430,7 @@ public class ContentService {
         sourceBuilder.from(superSearch.getSearchPage()-1);
         sourceBuilder.size(superSearch.getSearchSize());
 
+
         // MatchQueryBuilder 进行关键字搜索。
         if (superSearch.getPart()!=null){
             MatchQueryBuilder describe1 = QueryBuilders.matchQuery("part",superSearch.getPart());
@@ -401,6 +439,11 @@ public class ContentService {
         if (superSearch.getTitle()!=null){
             MatchQueryBuilder describe2 = QueryBuilders.matchQuery("title",superSearch.getTitle());
             boolBuilder.must(describe2);
+        }
+
+        if (superSearch.getKeyword()!=null){
+            MatchQueryBuilder keyword = QueryBuilders.matchQuery("Keyword",superSearch.getKeyword());
+            boolBuilder.must(keyword);
         }
 
         if (superSearch.getTxt_number()!=null){
@@ -525,6 +568,74 @@ public class ContentService {
         return dict;
 
     }
+
+    //    类型搜索---keyword
+    public Map  type_total(String keyword) throws IOException {
+
+        //建立request，并确定将request指向“lawmas”索引
+        SearchRequest searchRequest = new SearchRequest("law_txt");
+
+        SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
+        sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));
+
+
+        if (keyword.length() == 0){
+            System.out.println("Ture");
+            MatchAllQueryBuilder matchAllQueryBuilder = QueryBuilders.matchAllQuery();
+            sourceBuilder.size(0);
+            sourceBuilder.query(matchAllQueryBuilder);
+        }
+
+        else {
+            System.out.println("Flase");
+
+            //建立boolbuilder
+            BoolQueryBuilder boolBuilder = QueryBuilders.boolQuery();
+
+            // MatchQueryBuilder 进行关键字搜索，分别对txt和tittle进行匹配搜索
+            MatchQueryBuilder describe2 = QueryBuilders.matchQuery("txt_type",keyword);
+
+            //boolBuilder进行判断，此处设置为 txt文本必须包含keyword,title可以不包含keyword
+            boolBuilder.must(describe2);
+
+            //加入sourceBuilder准备
+            sourceBuilder.query(boolBuilder);
+            sourceBuilder.size(0);
+
+        }
+
+
+
+        //        聚合搜索，查询关键字数量
+        TermsAggregationBuilder aggregationBuilder = AggregationBuilders.terms("txt_type").field("txt_type");
+        aggregationBuilder.size(30);
+        sourceBuilder.aggregation(aggregationBuilder);
+
+        //        解除搜索限制，允许返回真实hit
+        sourceBuilder.trackTotalHits(true);
+
+
+        //        发送请求
+        searchRequest.source(sourceBuilder);
+        SearchResponse response = restHighLevelClient.search(searchRequest,RequestOptions.DEFAULT);
+
+        //        聚合搜索数据处理
+        Aggregations aggregations = response.getAggregations();
+        ParsedStringTerms parsedStringTerms = aggregations.get("txt_type");
+        List<? extends Terms.Bucket> buckets = parsedStringTerms.getBuckets();
+        Map abuoutWords = new HashMap();
+        for (Terms.Bucket bucket : buckets) {
+            //key的数据
+            String key = bucket.getKey().toString();
+            long docCount = bucket.getDocCount();
+//            System.out.println(key + ":" + docCount );
+            abuoutWords.put(key,docCount);
+        }
+
+        return abuoutWords;
+
+    }
+
 
 }
 
